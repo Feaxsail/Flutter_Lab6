@@ -1,17 +1,28 @@
-# slot_machine
+# Лабораторная работа №6. Flutter: StatefulWidget и управление состоянием
 
-A new Flutter project.
+### Информация об авторе
+**Студенты:** Щербаков Д.Н
 
-## Getting Started
+**Группа:** ИСП-232
 
-This project is a starting point for a Flutter application.
+**Дата:** 05.05.2026
 
-A few resources to get you started if this is your first Flutter project:
+## Что изучили в ходе работы
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- Создание **StatefulWidget** и управление состоянием виджета через класс `State`.
+- Генерация случайных чисел с помощью библиотеки `dart:math` для имитации вращения барабанов.
+- Работу с **анимациями**: анимированная прозрачность (`AnimatedOpacity`), плавная смена текста (`AnimatedSwitcher`) и пошаговая симуляция вращения с замедлением.
+- Логику блокировки UI во время асинхронных операций (флаг `_isSpinning`) и защиту от отрицательных монет.
+- Выделение повторяющихся виджетов в отдельные компоненты (например, `SlotRow`) для улучшения читаемости кода.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Инструкция по запуску
+2. Установите зависимости:
+   ```bash
+   flutter pub get
+   ```
+3. Подключите устройство или эмулятор, либо используйте Chrome:
+   ```bash
+   flutter run -d chrome
+   ```
+4. Дождитесь сборки и наслаждайтесь приложением.
