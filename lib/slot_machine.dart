@@ -23,6 +23,13 @@ class _SlotMachineState extends State<SlotMachine> {
   String _message = 'Крутите барабаны!';
 
   void _spin() {
+    if (_coins <= 0) {
+      setState(() {
+        _message = 'Монеты закончились! 😢';
+      });
+      return;
+    }
+
     _slot1 = _symbols[_random.nextInt(_symbols.length)];
     _slot2 = _symbols[_random.nextInt(_symbols.length)];
     _slot3 = _symbols[_random.nextInt(_symbols.length)];
@@ -36,6 +43,16 @@ class _SlotMachineState extends State<SlotMachine> {
     }
 
     setState(() {});
+  }
+
+  void _reset() {
+    setState(() {
+      _coins = 10;
+      _slot1 = 'assets/images/cherry.png';
+      _slot2 = 'assets/images/lemon.png';
+      _slot3 = 'assets/images/seven.png';
+      _message = '';
+    });
   }
 
   @override
@@ -65,8 +82,13 @@ class _SlotMachineState extends State<SlotMachine> {
           ),
           const SizedBox(height: 20),
           ElevatedButton(
-            onPressed: _spin,
+            onPressed: _coins > 0 ? _spin : null,
             child: const Text('🎰 КРУТИТЬ'),
+          ),
+          const SizedBox(height: 12),
+          TextButton(
+            onPressed: _reset,
+            child: const Text('🔄 Начать заново'),
           ),
         ],
       ),
